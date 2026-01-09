@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+  </head>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("#home, #about, #portfolio, #contact");
-  const navItems = document.querySelectorAll(".nav-item");
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("#home, #about, #portfolio, #contact");
+    const navItems = document.querySelectorAll(".nav-item");
 
-  const setActive = (id) => {
-    navItems.forEach(a => {
-      a.classList.toggle("active", a.getAttribute("href") === "#" + id);
-    });
-  };
+    const setActive = (id) => {
+      navItems.forEach(a => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+      });
+    };
 
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setActive(visible.target.id);
-  }, { threshold: 0.25, rootMargin: "-80px 0px -40% 0px" });
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { threshold: 0.25, rootMargin: "-80px 0px -40% 0px" });
 
-  sections.forEach(s => io.observe(s));
-});
+    sections.forEach(s => io.observe(s));
+  });
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".carousel-block").forEach((block) => {
-    const carousel = block.querySelector(".carousel");
-    const track = block.querySelector(".track");
-    const slides = Array.from(block.querySelectorAll(".slide"));
-    const prevBtn = block.querySelector(".prev");
-    const nextBtn = block.querySelector(".next");
-    const dotsWrap = block.querySelector(".dots");
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".carousel-block").forEach((block) => {
+      const carousel = block.querySelector(".carousel");
+      const track = block.querySelector(".track");
+      const slides = Array.from(block.querySelectorAll(".slide"));
+      const prevBtn = block.querySelector(".prev");
+      const nextBtn = block.querySelector(".next");
+      const dotsWrap = block.querySelector(".dots");
 
-    if (!carousel || !track || slides.length === 0 || !prevBtn || !nextBtn || !dotsWrap) return;
+      
+      if (!carousel || !track || slides.length === 0 || !prevBtn || !nextBtn || !dotsWrap) return;
 
-    let index = 0;
+      let index = 0;
 
-    // 生成 dots
-    dotsWrap.innerHTML = "";
-    slides.forEach((_, i) => {
-      const b = document.createElement("button");
-      b.className = "dot";
-      b.type = "button";
-      b.setAttribute("aria-label", `Go to ${i + 1}`);
-      b.addEventListener("click", () => {
-        index = i;
+      // 生成 dots
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.className = "dot";
+        b.type = "button";
+        b.setAttribute("aria-label", `Go to ${i + 1}`);
+        b.addEventListener("click", () => {
+          index = i;
+          update();
+        });
+        dotsWrap.appendChild(b);
+      });
+
+      const dots = Array.from(dotsWrap.querySelectorAll(".dot"));
+
+      function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      }
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
         update();
       });
-      dotsWrap.appendChild(b);
-    });
 
-    const dots = Array.from(dotsWrap.querySelectorAll(".dot"));
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        update();
+      });
 
-    function update() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((d, i) => d.classList.toggle("active", i === index));
-    }
-
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
       update();
     });
-
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      update();
-    });
-
-    update();
   });
-});
+
+
 
 </script>
 

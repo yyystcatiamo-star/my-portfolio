@@ -1,3 +1,8 @@
+*{ box-sizing: border-box; }
+html, body{ max-width:100%; overflow-x:hidden; }
+
+img{ max-width:100%; height:auto; display:block; }
+
 body {
   background-color: #e3eac7;
   font-family: 'Nunito', sans-serif;
@@ -720,6 +725,57 @@ body {
 }
 
 
+/* ✅ 平板和手机：<= 768px */
+@media (max-width: 768px){
+  /* 通用：大标题不要写死 72px */
+  h1, .section-title{
+    font-size: clamp(36px, 8vw, 56px);
+    line-height: 1.05;
+  }
+
+  /* 导航：允许换行，避免撑爆一行 */
+  .nav-links{
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* 你 portfolio 卡片：让网格自动适配 */
+  .portfolio-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* Language 那条：改成上下结构 + 允许按钮换行 */
+  .language-footer{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .lang-options{
+    margin-left: 0;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+/* ✅ 小手机：<= 480px */
+@media (max-width: 480px){
+  .portfolio-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* 输入框/表单：强制占满 */
+  input, textarea, .contact-form{
+    width: 100%;
+  }
+
+  /* 大 padding 全部收一收（避免左右挤没了） */
+  .full-page{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 
 
 
