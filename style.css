@@ -720,6 +720,89 @@ body {
 }
 
 
+/* ✅ mobile: basic safety */
+*{ box-sizing: border-box; }
+html, body{ width:100%; overflow-x:hidden; }
+
+/* ✅ mobile: navbar别挤爆 */
+@media (max-width: 768px){
+  .navbar{
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links{
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .nav-item{
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+}
+
+/* ✅ mobile: hero文字别大到被切 */
+@media (max-width: 768px){
+  .hero-section{
+    height: auto;            /* 别强制 100vh */
+    padding: 80px 16px 40px; /* 顶部给导航留空间 */
+    text-align: left;
+  }
+
+  .hero-section h1{
+    font-size: clamp(40px, 14vw, 72px);
+    line-height: 0.95;
+    margin: 0 0 12px;
+    word-break: break-word;
+  }
+
+  .subtitle-box{
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: clamp(18px, 5vw, 32px);
+  }
+
+  .welcome{
+    font-size: clamp(34px, 11vw, 64px);
+    line-height: 1.05;
+  }
+}
+
+/* ✅ mobile: About/Portfolio 这种左右结构，在手机上改成上下 */
+@media (max-width: 768px){
+  .about-container{
+    flex-direction: column;
+    gap: 18px;
+    padding: 60px 16px;
+  }
+
+  .profile-pic{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-pic img{
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .about-text{
+    width: 100%;
+  }
+}
+
+/* ✅ mobile: 装饰图如果是绝对定位，手机先隐藏避免压字 */
+@media (max-width: 768px){
+  .deco, .decoration, .bg-deco, .dots, .flowers{
+    display: none !important;
+  }
+}
 
 
 
