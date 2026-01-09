@@ -465,7 +465,7 @@ body {
 
 
 .gallery{
-  padding: 80px 10%;
+  padding: 80px 10% ;
 }
 
 /* 外框：左右按钮 + 中间 viewport */
@@ -538,18 +538,33 @@ body {
 .dot{
   width: 10px;
   height: 10px;
-  border-radius: 999px;
+  padding: 0;              
   border: 0;
+  border-radius: 50%;     
+  display: inline-block;   
+  flex: 0 0 auto;          
+  box-sizing: border-box;
+  line-height: 0;
   cursor: pointer;
   opacity: .35;
   background: #2E7D57;
+
+  appearance: none;        
+  -webkit-appearance: none;
 }
-.dot.active{
-  opacity: 1;
+.dot.active{ opacity: 1; }
+
+.dots{
+  grid-column: 2;          /* ✅ 关键：只占中间那列 */
+  justify-self: center;
+
+  display:flex;
+  justify-content:center;
+  gap:10px;
+
+  margin-top: 16px;
+  margin-bottom: 20px;     /* ✅ 拉开与下一张图的距离 */
 }
-
-
-
 
 
 .transition-cta{
