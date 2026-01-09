@@ -113,9 +113,10 @@ body {
     top: 52%;            /* 距离顶部 50% */
     left: 50%;           /* 距离左侧 50% */
     transform: translate(-50%, -50%); /* 向左和向上移动自身的一半，实现居中 */
-    width: 2000px;        /* 你设定的宽度 */
+    width: 1600px;        /* 你设定的宽度 */
     z-index: -1;         /* 确保它在文字（I'M SHITONG）的后面 */
     opacity: 0.4;
+    max-width: none;
 }
 
 .hero-section h1 {
