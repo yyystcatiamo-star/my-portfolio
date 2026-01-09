@@ -393,6 +393,31 @@ body {
 }
 
 
+.project-card{
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  transform: translateY(0) scale(1);
+  will-change: transform;
+  cursor: pointer;             /* 让它看起来可点 */
+}
+
+.project-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 18px rgba(0,0,0,.10);
+}
+
+.project-card:active{
+  transform: translateY(-2px) scale(.98);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+.project-card:hover img{
+  transform: scale(1.02);
+}
+.project-card img{
+  transition: transform .18s ease;
+}
+
+
 .project-image{
   background: rgba(255,255,255,.7);
   border-radius: 22px;
