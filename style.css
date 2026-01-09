@@ -725,58 +725,131 @@ body {
 }
 
 
-/* ✅ 平板和手机：<= 768px */
+
+.full-page{
+  padding: 140px 6vw 70px; /* 替代 300px 100px 80px 在小屏的灾难 */
+}
+
+/* 2) Hero：字体用 clamp 自动缩放；蛇别用 1600px */
+.hero-section h1{
+  font-size: clamp(42px, 10vw, 96px);
+}
+.welcome{
+  font-size: clamp(36px, 9vw, 88px);
+  margin-top: 28px;
+}
+.subtitle-box{
+  font-size: clamp(18px, 4.5vw, 36px);
+  gap: 12px;
+}
+.deco.snake{
+  width: min(92vw, 980px); /* 手机不会溢出 */
+}
+.deco.top{ width: min(55vw, 400px); }
+.deco.stars{ width: min(35vw, 200px); }
+
+/* 3) About：两栏改一栏；右侧图片舞台改为自适应 */
+@media (max-width: 900px){
+  .about-container{
+    flex-direction: column;
+    gap: 34px;
+  }
+  .profile-stage{
+    width: min(520px, 100%);
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  .photo-card{
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* 4) Language：别用 140px 超大 gap，允许换行 */
 @media (max-width: 768px){
-  /* 通用：大标题不要写死 72px */
-  h1, .section-title{
-    font-size: clamp(36px, 8vw, 56px);
-    line-height: 1.05;
-  }
-
-  /* 导航：允许换行，避免撑爆一行 */
-  .nav-links{
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* 你 portfolio 卡片：让网格自动适配 */
-  .portfolio-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  /* Language 那条：改成上下结构 + 允许按钮换行 */
   .language-footer{
+    padding: 18px 16px;
+  }
+  .language-group{
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 16px;
-    gap: 16px;
+    gap: 14px;
   }
   .lang-options{
-    margin-left: 0;
+    gap: 12px;
     flex-wrap: wrap;
-    gap: 16px;
+  }
+  .pill{
+    min-width: 110px;
+    height: 48px;
+    font-size: 18px;
+    padding: 0 18px;
   }
 }
 
-/* ✅ 小手机：<= 480px */
-@media (max-width: 480px){
+/* 5) Portfolio：你的 .portfolio-grid 是 flex，不要用 grid-template-columns
+      -> 用 flex-basis 控制：手机 1 列，平板 2 列 */
+@media (max-width: 900px){
   .portfolio-grid{
-    grid-template-columns: 1fr;
+    gap: 22px;
   }
-
-  /* 输入框/表单：强制占满 */
-  input, textarea, .contact-form{
-    width: 100%;
-  }
-
-  /* 大 padding 全部收一收（避免左右挤没了） */
-  .full-page{
-    padding-left: 16px;
-    padding-right: 16px;
+  .project-card{
+    width: min(360px, 100%);
+    flex: 1 1 min(360px, 100%);
   }
 }
 
+@media (max-width: 560px){
+  .project-card{
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+/* 6) Contact：表单强制 1 列 + 卡片 padding 缩小 */
+@media (max-width: 900px){
+  .contact-card{
+    border-radius: 34px;
+    padding: 28px 18px 34px;
+  }
+  .contact-form{
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
+  }
+  /* 把你之前强行放左列的规则重置掉（不然会怪） */
+  .field-email,
+  .field-message,
+  .contact-btn{
+    grid-column: auto;
+  }
+  .contact-title{
+    font-size: clamp(40px, 9vw, 72px);
+  }
+  .stars{
+    width: 150px;
+    bottom: 40px;
+    right: 16px;
+  }
+}
+
+/* 7) Carousel：左右按钮别太占宽 */
+@media (max-width: 560px){
+  .carousel{
+    grid-template-columns: 44px 1fr 44px;
+    gap: 10px;
+  }
+  .nav{
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+  .slide img{
+    height: 70vh;
+  }
+}
 
 
 
