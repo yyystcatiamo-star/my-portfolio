@@ -1,0 +1,726 @@
+body {
+  background-color: #e3eac7;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.navbar {
+  background-color: #b2ce80;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 10%;  
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 6px 20px;
+  border-radius: 999px;
+}
+
+.nav-item:hover {
+  background-color: rgba(227, 234, 199, 0.5);
+}
+
+.nav-item.active {
+  background-color: #e3eac7;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #2f6f5f;
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 34px;
+}
+
+.navbar {
+  background-color: #b2ce80;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+} 
+
+
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  position: relative;  
+  overflow: hidden;  
+}
+
+.deco {
+    position: absolute;
+    z-index: -1; 
+}
+
+.deco.top {
+    top: 160px;
+    left: 0px;
+    width: 400px; 
+    opacity: 0.4;
+}
+
+.deco.stars {
+    bottom: 60px;
+    left: 50px;
+    width: 200px;
+    opacity: 0.4;
+}
+
+.deco.snake {
+    position: absolute;   /* 确保它是绝对定位 */
+    top: 52%;            /* 距离顶部 50% */
+    left: 50%;           /* 距离左侧 50% */
+    transform: translate(-50%, -50%); /* 向左和向上移动自身的一半，实现居中 */
+    width: 1600px;        /* 你设定的宽度 */
+    z-index: -1;         /* 确保它在文字（I'M SHITONG）的后面 */
+    opacity: 0.4;
+}
+.hero-section h1 {
+  font-size: 96px;          /* 你想保持也OK */
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.05;        /* 关键：让大标题更干净 */
+}
+
+.subtitle-box {
+  font-size: 36px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;         /* 给副标题一口气 */
+}
+
+.line {
+  width: 70px;              /* 50有点短，视觉不稳 */
+  height: 1px;
+  background-color: rgba(0,0,0,0.45); /* 比#333更柔 */
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 22px;          /* 18偏小，配96会显得弱 */
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+.welcome {
+  margin-top: 60px;         /* 16太小，改到 50-80 之间试 */
+  font-size: 88px;          /* 建议比h1略小一点，更有层级 */
+  line-height: 1.1;
+}
+
+
+
+
+.full-page{
+  min-height:100vh;
+  background:var(--bg);
+  padding:300px 100px 80px;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+}
+
+
+.about-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:80px;
+  flex:1; /* 让主内容占满高度，footer 才能靠下 */
+}
+
+/* 左文字 */
+.about-text{
+  flex:1;
+  max-width:640px;
+  font-size:20px;
+  line-height:1.55;
+  color:var(--text);
+}
+
+.about-text h3{
+  font-size: 72px;
+  line-height: 1;
+  margin: 0 0 12px;
+  font-weight: 400;      /* 想更粗就 800 */
+  letter-spacing: 0;     /* 想稍微高级一点可改 0.5px */
+  color: #2E7D57;        /* 你喜欢的绿色 */
+} 
+
+.horizontal-line{
+  height:2px;
+  width:100%;
+  background:var(--line);
+  margin:10px 0 30px;
+}
+
+.about-text p{ margin:0 0 22px; }
+
+.about-text h4{
+  margin:28px 0 14px;
+  font-size:28px;
+  color:var(--green);
+  font-weight:400;
+  color: #2E7D57;   
+}
+
+.about-text ul{
+  list-style:disc;
+  padding-left: 22px;
+  margin: 0 0 22px;
+  color: #2E7D57;   
+}
+
+.about-text li{
+  position:relative;
+  padding-left:34px;
+  font-size:22px;
+  color: #000;       
+}
+
+/* 右侧：叠层舞台 */
+.profile-stage{
+  position:relative;
+  width:520px;
+  height:520px;
+  flex:0 0 auto;
+}
+
+/* 装饰层在后 */
+.deco-layer{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+}
+
+.deco-svg{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+}
+
+/* 相框在前 */
+.photo-card{
+  position:absolute;
+  right:50px;
+  top:40px;
+  width:420px;
+  height:460px;
+  background:#B2CE80;
+  
+  border:18px solid var(--pill);
+  border-radius:28px;
+  padding:18px;
+  box-sizing:border-box;
+
+  z-index:2;
+  display:grid;
+  place-items:center;
+}
+
+.photo-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.language-footer{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;     /* ✅ 整体居中 */
+  align-items:center;
+
+  background:#E3EAC7;
+  padding:36px 70px;
+}
+
+
+.language-group{
+  display:flex;
+  align-items:center;
+  gap:38px;                   /* label 和按钮组的距离 */
+}
+
+.lang-label{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  font-size:28px;             /* ✅ 修正 */
+  font-weight:400;
+  color:
+}
+
+.lang-icon{
+  width:36px;
+  height:36px;
+  display:block;
+}
+
+/* 三颗 pill */
+.lang-options{
+  display:flex;
+  gap:140px;                  /* 你想要的超大间距 */
+  margin-left:0;              /* ✅ 不要 auto */
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:120px;
+  height:60px;
+  padding:0 24px;             /* ✅ 修正 */
+  opacity: 0.7;
+  background:#B2CE80;
+  color:#fff;
+  border-radius:999px;
+
+  font-size:24px;
+  font-weight:200;
+  text-decoration:none;
+}
+
+
+
+
+.portfolio-section{
+  min-height: 100vh;
+  position: relative;
+  background: #E3EAC7;
+  padding: 110px 10% 90px;
+  overflow: hidden;
+}
+
+
+.section-title{
+  font-size: 72px;
+  line-height: 1;
+  margin: 0 0 28px;
+  font-weight: 400;
+  color:#2E7D57;   
+} 
+
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}/*  确保卡片固定宽度，不被别的样式挤压 */
+
+
+.project-card{
+  width: 300px;
+  flex: 0 0 300px;     /* 关键：别让 flex 把它拉伸/压缩 */
+  background: #D7E3A6;
+  border-radius: 20px;
+  padding: 12px 12px 24px;
+  text-align: center;
+}
+
+/* ✅ 关键：用 flex-wrap 做 3 + 2 自动居中 */
+.portfolio-grid{
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  width: 100%;           /* 控制整体宽度，让 3 张更像图里那样居中 */
+  margin: 0 auto;              /* 居中整个网格 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;     /* 最后一行（2张）会自动居中 */
+  gap: 64px 84px;              /* 行间距 + 列间距（接近截图空隙） */
+}
+
+/* 卡片 */
+.project-card{
+  width: 300px;                /* 固定宽度：保证一行正好 3 个 */
+  background: #D7E3A6;
+  border-radius: 28px;
+  padding: 16px 16px 24px;
+  text-align: center;
+}
+
+
+.project-image{
+  background: rgba(255,255,255,.7);
+  border-radius: 22px;
+  height: 190px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.project-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 卡片标题：图里比较细、字距更松一点 */
+.project-card h3{
+  margin: 10px 0 18px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: #2F6F5F;
+}
+
+
+.view-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 28px;
+  border-radius: 999px;
+
+  background: #B2CE80;
+  color: #1F3D33;
+
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.view-btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(.98);
+}
+
+.deco2-lefttop1{
+  position: absolute;
+  right: 0px;          /* ✅ 负值让它更“贴边/出血” */
+  bottom: 120px;
+  width: 300px;
+  opacity: 0.4;
+}
+.deco2-stars{
+  position: absolute;
+  left: 60px;
+  bottom: 100px;         /* ✅ 数值越大越往上 */
+  width: 180px;
+  opacity: 0.4;
+  
+}
+
+
+
+
+.gallery{
+  padding: 80px 10%;
+}
+
+/* 外框：左右按钮 + 中间 viewport */
+.carousel{
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr 64px;
+  align-items: center;
+  gap: 18px;
+}
+
+/* 中间可视区域：不要边框感，就别圆角/别背景 */
+.viewport{
+  overflow: hidden;
+  border-radius: 0;      /* ✅ 不要圆角就 0 */
+  background: transparent;
+}
+
+/* 轨道 */
+.track{
+  display: flex;
+  transition: transform .45s ease;
+  will-change: transform;
+}
+
+/* 每一页：去掉 padding & 背景 */
+.slide{
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 0;            /* ✅ 关键：去掉内边距 */
+  background: transparent; /* ✅ 去掉灰底 */
+  display: block;        /* ✅ 不用 flex 居中了 */
+}
+
+/* 图片铺满 viewport（会裁切，但很“占满”） */
+.slide img{
+  width: 100%;
+  height: 85vh;          /* 你想多高就改：70vh / 80vh / 100vh */
+  display: block;
+  object-fit: cover;     /* ✅ 关键：铺满并裁切 */
+  border-radius: 0;      /* ✅ 不要边框感 */
+}
+
+/* 左右箭头（可保留） */
+.nav{
+  width: 54px;
+  height: 54px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(6px);
+  font-size: 36px;
+  line-height: 1;
+  color: #B2CE80;
+  display: grid;
+  place-items: center;
+}
+.nav:hover{
+  color: rgba(0,0,0,.55);
+}
+
+/* 小圆点 */
+.dots{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  opacity: .35;
+  background: #2E7D57;
+}
+.dot.active{
+  opacity: 1;
+}
+
+
+
+
+
+.transition-cta{
+  background:#E3EAC7;          /* 跟你页面浅绿一致 */
+  padding: 90px 10%;           /* 过渡区域上下留白 */
+}
+
+.transition-inner{
+  max-width: 1100px;           /* 控制行宽，别铺满更高级 */
+  margin: 0 auto;
+}
+
+.transition-text{
+  margin: 0;
+  font-size: 72px;             /* 你截图那种大字 */
+  line-height: 1.08;
+  font-weight: 500;
+  color: #2E7D57;
+  letter-spacing: .2px;
+}
+
+
+
+
+
+
+
+.contact-section{
+  min-height:100vh;
+  background:#E3EAC7;
+  padding:90px 8% 50px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* 标题 */
+.contact-top{
+  margin:0 0 28px;
+}
+
+.contact-title{
+  margin:0;
+  font-size:72px;          /* 更接近你图里的大标题 */
+  font-weight:500;
+  color:#2E7D57;
+  letter-spacing:.2px;
+}
+
+/* 卡片 */
+.contact-card{
+  max-width:1200px;
+  margin:0 auto;
+  background:#D7E3A6;
+  border-radius:70px;
+  padding:78px 96px 92px;  /* 关键：别用 300px 那种会把表单挤烂 */
+  position:relative;
+  overflow:hidden;
+}
+
+/* 表单网格 */
+.contact-form{
+  display:grid;
+  grid-template-columns: minmax(320px, 460px) minmax(320px, 460px);
+  column-gap:140px;
+  row-gap:44px;
+  align-items:start;
+  position:relative;
+  z-index:2;              /* 表单在 stars 上面 */
+}
+
+/* 让 Email / Message / Button 在左列（跟截图一致） */
+.field-email,
+.field-message,
+.contact-btn{
+  grid-column:1 / 2;
+}
+
+/* label */
+.field label{
+  display:block;
+  font-size:22px;
+  color:rgba(0,0,0,.55);
+  margin-bottom:14px;
+  letter-spacing:.2px;
+}
+
+/* 输入框（细边框、透明底） */
+.field input,
+.field textarea{
+  width:100%;
+  height:56px;
+  border:1.5px solid rgba(0,0,0,.45);
+  background:transparent;
+  border-radius:0;
+  outline:none;
+  padding:10px 14px;
+  font-size:18px;
+  color:#222;
+}
+
+.field textarea{
+  height:92px;
+  resize:none;
+}
+
+/* 按钮 */
+.contact-btn{
+  justify-self:start;
+  margin-top:10px;
+  border:none;
+  background:#B2CE80;
+  color:#111;
+  padding:16px 42px;
+  border-radius:999px;
+  font-size:20px;
+  font-weight:500;
+  cursor:pointer;
+}
+
+/* stars：卡片内右下角，略微“出界”更像你图里那种 */
+.stars{
+  position:absolute;
+  right:8%;
+  bottom:200px;       /* ✅ 这个数调到“压在卡片右下角”的位置 */
+  width:220px;
+  height:auto;
+  z-index:5;          /* ✅ 比卡片更高 */
+  pointer-events:none;
+  opacity: 0.6;
+}
+
+/* 底部信息 */
+.contact-footer{
+  max-width:1200px;
+  margin:34px auto 0;
+  text-align:center;
+  color:#2E7D57;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+
+.direct-contact p{
+  margin:6px 0;
+  font-size:15px;
+  line-height:1.6;
+  letter-spacing:.2px;
+}
+
+.social-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:22px;
+}
+
+.social{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.social img{
+  width:26px;
+  height:26px;
+  display:block;
+}
+
+
+
+
+
+
