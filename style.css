@@ -1,17 +1,17 @@
 body {
-  background-color: #e3eac7;
-  font-family: 'Nunito', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
+    background-color: #e3eac7;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 .navbar {
-  background-color: #b2ce80;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 10%;  
+    background-color: #b2ce80;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 10%;  
 }
 
 .logo {
@@ -63,30 +63,30 @@ body {
 }
 
 .navbar {
-  background-color: #b2ce80;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 10%;
+    background-color: #b2ce80;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10%;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 } 
 
 
 
 .hero-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  position: relative;  
-  overflow: hidden;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;  
+    overflow: hidden;  
 }
 
 .deco {
@@ -117,6 +117,7 @@ body {
     z-index: -1;         /* 确保它在文字（I'M SHITONG）的后面 */
     opacity: 0.4;
     max-width: none;
+    height: auto;
 }
 
 .hero-section h1 {
