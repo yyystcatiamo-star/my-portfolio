@@ -30,7 +30,7 @@ body {
 }
 
 .logo-img{
-  height:34px;           /* 你可以试 28/32/40 */
+  height:34px;          
   width:auto;
   display:block;
 }
@@ -75,7 +75,7 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: #2f6f5f;
+  background: #006400;
   border-radius: 2px;
   transition: width 0.2s ease;
 }
@@ -173,70 +173,58 @@ body {
 .full-page{
   min-height:100vh;
   background:var(--bg);
-  padding:300px 100px 80px;
+  padding:140px 100px 80px; /* 你原来 300px 顶部太夸张了，先改正常 */
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
 }
 
-
 .about-container{
   max-width:1200px;
-  margin:0 auto;
+  margin:0 auto 60px auto;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
   gap:80px;
-  flex:1; /* 让主内容占满高度，footer 才能靠下 */
+  flex:1;
 }
+
+.about-text h3{
+  font-size:60px;
+  line-height:1;
+  margin:0 0 22px;
+  font-weight:400;
+  letter-spacing:0;
+  color:#006400; /* ✅ 记得分号 */
+}
+
+.about-text p{ line-height:1.35; max-width:56ch; } 
 
 /* 左文字 */
 .about-text{
   flex:1;
   max-width:640px;
-  font-size:20px;
+  font-size:22px;
   line-height:1.55;
   color:var(--text);
 }
 
-.about-text h3{
-  font-size: 72px;
-  line-height: 1;
-  margin: 0 0 12px;
-  font-weight: 400;      /* 想更粗就 800 */
-  letter-spacing: 0;     /* 想稍微高级一点可改 0.5px */
-  color: #006400        /* 你喜欢的绿色 */
-} 
-
-.horizontal-line{
-  height:2px;
-  width:100%;
-  background:var(--line);
-  margin:10px 0 30px;
-}
-
-.about-text p{ margin:0 0 22px; }
-
 .about-text h4{
   margin:28px 0 14px;
   font-size:28px;
-  color:var(--green);
   font-weight:400;
-  color: #006400;   
+  color:#006400;
 }
 
 .about-text ul{
   list-style:disc;
-  padding-left: 22px;
-  margin: 0 0 22px;
-  color: #006400;   
+  padding-left:22px;
+  margin:0 0 22px;
 }
 
 .about-text li{
-  position:relative;
-  padding-left:34px;
   font-size:22px;
-  color: #000;       
+  color:#000;
 }
 
 /* 右侧：叠层舞台 */
@@ -247,7 +235,6 @@ body {
   flex:0 0 auto;
 }
 
-/* 装饰层在后 */
 .deco-layer{
   position:absolute;
   inset:0;
@@ -262,7 +249,6 @@ body {
   object-fit:contain;
 }
 
-/* 相框在前 */
 .photo-card{
   position:absolute;
   right:50px;
@@ -270,12 +256,10 @@ body {
   width:420px;
   height:460px;
   background:#B2CE80;
-  
   border:18px solid var(--pill);
   border-radius:28px;
   padding:18px;
   box-sizing:border-box;
-
   z-index:2;
   display:grid;
   place-items:center;
@@ -288,62 +272,62 @@ body {
   border-radius:10px;
 }
 
+/* ✅ footer：用 margin-top:auto 把它推到底部 */
 .language-footer{
-  margin-top:40px;
+  margin-top:auto;           /* ✅ 关键：自动顶到页面底部 */
   display:flex;
-  justify-content:center;     /* ✅ 整体居中 */
+  justify-content:center;
   align-items:center;
-
   background:#E3EAC7;
   padding:36px 70px;
 }
 
-
 .language-group{
   display:flex;
   align-items:center;
-  gap:38px;                   /* label 和按钮组的距离 */
+  gap:38px;
 }
 
 .lang-label{
   display:inline-flex;
   align-items:center;
   gap:18px;
-  font-size:28px;             /* ✅ 修正 */
+  font-size:28px;
   font-weight:400;
-  color:
+  color:#006400;             /* ✅ 你原来写了个空的 color: */
 }
 
 .lang-icon{
-  width:36px;
-  height:36px;
+  width:30px;
+  height:30px;
   display:block;
 }
 
-/* 三颗 pill */
 .lang-options{
   display:flex;
-  gap:140px;                  /* 你想要的超大间距 */
-  margin-left:0;              /* ✅ 不要 auto */
+  gap:80px;                
+  flex-wrap:wrap;            /* ✅ 小屏自动换行不爆 */
+  justify-content:center;
 }
 
 .pill{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   min-width:120px;
   height:60px;
-  padding:0 24px;             /* ✅ 修正 */
-  opacity: 0.7;
+  padding:0 24px;
+  opacity:0.7;
   background:#B2CE80;
   color:#fff;
   border-radius:999px;
-
-  font-size:24px;
+  font-size:22px;
   font-weight:200;
-  text-decoration:none;
+  border:none;
+  cursor:pointer;
 }
+
+
 
 
 
@@ -358,7 +342,7 @@ body {
 
 
 .section-title{
-  font-size: 72px;
+  font-size: 60px;
   line-height: 1;
   margin: 0 0 28px;
   font-weight: 400;
@@ -643,7 +627,7 @@ body {
 
 .contact-title{
   margin:0;
-  font-size:72px;          /* 更接近你图里的大标题 */
+  font-size:60px;          /* 更接近你图里的大标题 */
   font-weight:500;
   color:#006400;
   letter-spacing:.2px;
