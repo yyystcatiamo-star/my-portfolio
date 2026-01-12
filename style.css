@@ -325,6 +325,14 @@ body {
   font-weight:200;
   border:none;
   cursor:pointer;
+  border: none;
+  outline: none;       /* 去掉默认那圈 */
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.pill:active{
+  transform: scale(0.97);     /* 点击缩一下 */
+  filter: brightness(0.95);   /* 顺便暗一点点 */
 }
 
 
