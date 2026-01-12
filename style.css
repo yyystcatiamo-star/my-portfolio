@@ -6,18 +6,41 @@ body {
     color: #333;
 }
 
+
 .navbar {
     background-color: #b2ce80;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 10%;  
+    padding: 12px 10%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+} 
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  text-decoration:none;
+
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 500;
+.logo-img{
+  height:34px;           /* 你可以试 28/32/40 */
+  width:auto;
+  display:block;
 }
+
+.logo-text{
+ 
+  font-size:22px;
+  font-weight:500;
+}
+
 
 .nav-links {
   display: flex;
@@ -62,19 +85,7 @@ body {
   width: 34px;
 }
 
-.navbar {
-    background-color: #b2ce80;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 10%;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-} 
 
 
 
@@ -194,7 +205,7 @@ body {
   margin: 0 0 12px;
   font-weight: 400;      /* 想更粗就 800 */
   letter-spacing: 0;     /* 想稍微高级一点可改 0.5px */
-  color: #2E7D57;        /* 你喜欢的绿色 */
+  color: #006400        /* 你喜欢的绿色 */
 } 
 
 .horizontal-line{
@@ -211,14 +222,14 @@ body {
   font-size:28px;
   color:var(--green);
   font-weight:400;
-  color: #2E7D57;   
+  color: #006400;   
 }
 
 .about-text ul{
   list-style:disc;
   padding-left: 22px;
   margin: 0 0 22px;
-  color: #2E7D57;   
+  color: #006400;   
 }
 
 .about-text li{
@@ -351,7 +362,7 @@ body {
   line-height: 1;
   margin: 0 0 28px;
   font-weight: 400;
-  color:#2E7D57;   
+  color:#006400;   
 } 
 
 
@@ -443,7 +454,7 @@ body {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.2px;
-  color: #2F6F5F;
+  color: #006400;
 }
 
 
@@ -572,7 +583,7 @@ body {
   line-height: 0;
   cursor: pointer;
   opacity: .35;
-  background: #2E7D57;
+  background: #006400;
 
   appearance: none;        
   -webkit-appearance: none;
@@ -607,7 +618,7 @@ body {
   font-size: 72px;             /* 你截图那种大字 */
   line-height: 1.08;
   font-weight: 500;
-  color: #2E7D57;
+  color:#006400;
   letter-spacing: .2px;
 }
 
@@ -634,7 +645,7 @@ body {
   margin:0;
   font-size:72px;          /* 更接近你图里的大标题 */
   font-weight:500;
-  color:#2E7D57;
+  color:#006400;
   letter-spacing:.2px;
 }
 
@@ -726,7 +737,7 @@ body {
   max-width:1200px;
   margin:34px auto 0;
   text-align:center;
-  color:#2E7D57;
+  color:#006400;
   display:flex;
   flex-direction:column;
   align-items:center;
