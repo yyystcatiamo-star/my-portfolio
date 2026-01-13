@@ -766,7 +766,7 @@ body {
 }
 
 
-/* ✅ 默认（桌面）：隐藏汉堡 */
+
 .menu-btn{ display:none; }
 
 /* 汉堡按钮外观 + 大点击区域 */
@@ -840,12 +840,11 @@ body {
     z-index: 4100;
   }
 
-  /* logo 右（强制显示，防止被挤出去/被隐藏） */
+ 
   .logo{
     display:flex;
     align-items:center;
     gap: 8px;
-
     margin: 0;
     order: 2;
     z-index: 4100;
@@ -854,7 +853,7 @@ body {
     max-width: calc(100% - 60px);    /* 给汉堡留位置 */
   }
 
-.menu-btn{ flex: 0 0 auto; }
+  .menu-btn{ flex: 0 0 auto; }
   .logo-text{ display:none; }
   .logo-img{
     display:block;
@@ -863,7 +862,7 @@ body {
   }
 
 
-.nav-drawer{
+  .nav-drawer{
   position: fixed;
   left: 0;
   right: 0;
@@ -877,20 +876,20 @@ body {
 
   display: none;
   z-index: 99999;   /* ✅ 必须盖住 contact/所有装饰 */
-}
-.nav-drawer.open{ display: block; }
+  }
+  .nav-drawer.open{ display: block; }
 
 /* ✅ 遮罩（点它关菜单） */
-.drawer-backdrop{
+  .drawer-backdrop{
   position: fixed;
   inset: 56px 0 0 0;   /* 同上，跟 navbar 高度一致 */
   background: rgba(0,0,0,.08);
   z-index: 99998;
 }
-.drawer-backdrop[hidden]{ display:none; }
+  .drawer-backdrop[hidden]{ display:none; }
 
 /* 菜单大字 + 线 */
-.drawer-item{
+  .drawer-item{
   display:block;
   font-size: 36px;
   color:#000;
@@ -899,19 +898,19 @@ body {
   padding: 20px 0 18px;
   border-bottom: 2px solid #006400;
   width: 72%;
-}
+  }
 
-.drawer-sub{
+  .drawer-sub{
   padding: 18px 0 16px;
   display:flex;
   flex-direction:column;
   gap: 10px;
-}
-.drawer-sub a{
+  }
+  .drawer-sub a{
   font-size: 22px;
   color:#000;
   text-decoration:none;
-}
+  }
 
 
   .hero-section{
@@ -1027,7 +1026,7 @@ body {
 
 
   .about-text h3{
-    font-size: 40px;
+    font-size: 36px;
     margin: 0 0 14px;
     align-self: flex-start;
   }
@@ -1133,9 +1132,210 @@ body {
 
 
 
+  .portfolio-section{
+    padding: 96px 6vw 60px;   
+  }
+
+  .section-title{
+    font-size: 36px;
+    margin: 0 0 18px;
+  }
+
+  .portfolio-grid{
+    width: 100%;
+    max-width: 480px;         
+    margin: 0 auto;
+    justify-content: center;
+    gap: 28px;                
+  }
+
+  .project-card{
+    width: min(260px, 92vw);  /* ✅ 关键：卡片跟着屏幕缩 */
+    flex: 0 0 auto;           /* ✅ 不要死卡 300px */
+    border-radius: 20px;
+    padding: 14px 14px 14px;
+  }
+
+  .project-image{
+    height: 170px;
+    border-radius: 18px;
+    margin-bottom: 14px;
+  }
+
+  .project-card h3{
+    font-size: 18px;
+    margin: 8px 0 14px;
+  }
+
+  .view-btn{
+    height: 40px;
+    padding: 0 22px;
+    font-size: 13px;
+  }
+
+
+  .deco2-lefttop1{
+    width: 200px;
+    bottom: 10px;
+    opacity: 0.25;
+  }
+  .deco2-stars{
+    width:100px;
+    left: 14px;
+    bottom: 1px;
+    opacity: 0.25;
+  }
 
 
 
+
+  .gallery{
+    padding: 48px 6vw;
+  }
+
+  .carousel{
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav{
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .viewport{
+    overflow: hidden;
+    max-height: 60vh;
+  }
+
+  .slide img{
+    height: auto;
+    max-height: 60vh;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* ✅ 小圆点：变小 + 间距变小 */
+  .carousel .dots{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    gap: 3px;
+  }
+
+  .carousel .dots .dot{
+    width: 6px;
+    height: 6px;
+  }
+
+  .transition-cta{
+    padding: 56px 6vw;          /* 上下别太厚，左右用 vw 更舒服 */
+  }
+
+  .transition-inner{
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .transition-text{
+    font-size: clamp(32px, 8vw, 46px); 
+    line-height: 1.15;
+    letter-spacing: 0;
+    word-break: break-word;   
+  }
+ 
+ 
+ 
+ 
+  .contact-section{
+    padding: 70px 6vw 40px;  
+  }
+
+  .contact-title{
+    font-size: clamp(34px, 7.5vw, 46px);
+  }
+
+  .contact-card{
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 34px;       
+    padding: 34px 22px 42px;   
+    overflow: visible;         
+  }
+
+ 
+  .contact-form{
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 22px;
+  }
+
+  
+  .field-email,
+  .field-message,
+  .contact-btn{
+    grid-column: auto;
+  }
+
+  .field label{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .field input,
+  .field textarea{
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .field textarea{
+    height: 110px; 
+  }
+
+  .contact-btn{
+    width: fit-content;    
+    padding: 14px 24px;
+    font-size: 18px;
+    margin-top: 6px;
+  }
+
+  
+  .stars{
+    right: 10px;
+    bottom: 160px;
+    width: 100px;
+    opacity: .55;
+  }
+
+ 
+  .direct-contact p{
+    margin: 4px 0;
+    font-size: 13px;
+    line-height: 1;      /* 行距更紧：可试 1.25~1.4 */
+    
+    letter-spacing: -0.3px;
+    
+  }
+
+  .social-row{
+    gap: 16px;
+  }
+
+  .social{
+    width: 38px;
+    height: 38px;
+  }
+
+  .social img{
+    width: 22px;
+    height: 22px;
+  }
 
 
 
@@ -1265,6 +1465,152 @@ body {
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
