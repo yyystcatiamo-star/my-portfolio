@@ -1125,8 +1125,8 @@ html, body{ width:100%; overflow-x:hidden; }
   }
 
   .project-card{
-    width: min(260px, 92vw);  /* ✅ 关键：卡片跟着屏幕缩 */
-    flex: 0 0 auto;           /* ✅ 不要死卡 300px */
+    width: min(260px, 92vw);  
+    flex: 0 0 auto;           
     border-radius: 20px;
     padding: 14px 14px 14px;
   }
