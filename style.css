@@ -20,6 +20,10 @@ body {
     right: 0;
     z-index: 9999;
 } 
+.nav-drawer,
+.drawer-backdrop{
+  display: none;
+}
 
 .logo{
   display:flex;
