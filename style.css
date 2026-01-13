@@ -785,7 +785,7 @@ body {
 .menu-btn span{
   display:block;
   width:30px;
-  height:3px;
+  height:2px;
   background:#006400;
   border-radius:999px;
 }
@@ -810,8 +810,6 @@ body {
   .logo{ order:2; }
 
 
-
-  /* 1) NAVBAR */
   .navbar{
     position: fixed;
     top: 0;
@@ -830,7 +828,7 @@ body {
    
   }
 
-  /* 汉堡左 */
+  
   .menu-btn{
     display:flex;
     margin: 0;
@@ -838,7 +836,6 @@ body {
     z-index: 4100;
   }
 
- 
   .logo{
     display:flex;
     align-items:center;
