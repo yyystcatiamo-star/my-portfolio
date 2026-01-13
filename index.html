@@ -120,6 +120,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menu-btn");
+  const drawer = document.querySelector(".nav-drawer");
+  const backdrop = document.querySelector(".drawer-backdrop");
+
+  if(!btn || !drawer || !backdrop) return;
+
+  function openMenu(){
+    drawer.classList.add("open");
+    backdrop.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+    drawer.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // 防止底下页面滚动
+  }
+
+  function closeMenu(){
+    drawer.classList.remove("open");
+    backdrop.hidden = true;
+    btn.setAttribute("aria-expanded", "false");
+    drawer.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = ""; 
+  }
+
+  btn.addEventListener("click", () => {
+    drawer.classList.contains("open") ? closeMenu() : openMenu();
+  });
+
+  backdrop.addEventListener("click", closeMenu);
+
+  // 点菜单项自动收起
+  drawer.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // ESC 关闭
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") closeMenu();
+  });
+});
+</script>
 
 
 
@@ -130,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <body>
      <header class="navbar">
+      
          <div class="logo" aria-label="logo">
          <img src="img/logo ys.svg" alt="YS logo" class="logo-img">
          <span class="logo-text">shitong</span>
@@ -147,7 +189,24 @@ document.addEventListener("DOMContentLoaded", () => {
              <a href="#contact" class="nav-item">CONTACT</a>
              
          </nav>
-     </header>
+      </header>
+      <div class="nav-drawer" id="mobileMenu" aria-hidden="true">
+        <a class="drawer-item" href="#home">HOME</a>
+        <a class="drawer-item" href="#about">ABOUT</a>
+
+        <a class="drawer-item" href="#portfolio">PORTFOLIO</a>
+        <div class="drawer-sub">
+          <a href="#vis">Visual Identity Design</a>
+          <a href="#info">Information Design</a>
+          <a href="#editorial">Editorial Design</a>
+          <a href="#illustration">Illustration</a>
+          <a href="#other">Other Design</a>
+        </div>
+
+        <a class="drawer-item" href="#contact">CONTACT</a>
+      </div>
+      <div class="drawer-backdrop" hidden></div>
+
 
    <main id="home" class="hero-section">
         <img class="deco top" src="img/left-top.svg" alt="">
