@@ -913,7 +913,7 @@ body {
     overflow: hidden;
     height: auto;        
     min-height: 100svh;  
-    padding: 180px 10vw 80px; /* ✅ 150 太大，先降一点 */
+    padding: 180px 6vw 80px; /* ✅ 150 太大，先降一点 */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
