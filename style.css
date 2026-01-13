@@ -331,7 +331,7 @@ body {
   min-width:120px;
   height:60px;
   padding:0 24px;
-  opacity:0.7;
+  
   background:#B2CE80;
   color:#fff;
   border-radius:999px;
@@ -340,7 +340,7 @@ body {
   border:none;
   cursor:pointer;
   border: none;
-  outline: none;       /* 去掉默认那圈 */
+  outline: none;      
   transition: transform .12s ease, filter .12s ease;
 }
 
