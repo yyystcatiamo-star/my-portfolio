@@ -501,7 +501,6 @@ body {
   gap: 18px;
 }
 
-/* 中间可视区域：不要边框感，就别圆角/别背景 */
 .viewport{
   overflow: hidden;
   border-radius: 0;      /* ✅ 不要圆角就 0 */
@@ -540,7 +539,7 @@ body {
   border: 0;
   border-radius: 999px;
   cursor: pointer;
-  background: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.5);
   backdrop-filter: blur(6px);
   font-size: 36px;
   line-height: 1;
@@ -552,43 +551,42 @@ body {
   color: rgba(0,0,0,.55);
 }
 
+
+
 /* 小圆点 */
 .dots{
+  grid-column: 2;          /* ✅ 只占中间那列 */
+  justify-self: center;
+
   display: flex;
   justify-content: center;
   gap: 10px;
+
   margin-top: 16px;
+  margin-bottom: 20px;
 }
+
 .dot{
   width: 10px;
   height: 10px;
-  padding: 0;              
+  padding: 0;
   border: 0;
-  border-radius: 50%;     
-  display: inline-block;   
-  flex: 0 0 auto;          
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 auto;
   box-sizing: border-box;
   line-height: 0;
   cursor: pointer;
+
   opacity: .35;
   background: #006400;
 
-  appearance: none;        
+  appearance: none;
   -webkit-appearance: none;
 }
+
 .dot.active{ opacity: 1; }
 
-.dots{
-  grid-column: 2;          /* ✅ 关键：只占中间那列 */
-  justify-self: center;
-
-  display:flex;
-  justify-content:center;
-  gap:10px;
-
-  margin-top: 16px;
-  margin-bottom: 20px;     /* ✅ 拉开与下一张图的距离 */
-}
 
 
 
@@ -1231,7 +1229,9 @@ body {
   .carousel .dots .dot{
     width: 6px;
     height: 6px;
+    opacity: 0.35;
   }
+
 
   .transition-cta{
     padding: 56px 6vw;          /* 上下别太厚，左右用 vw 更舒服 */
