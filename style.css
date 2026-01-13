@@ -348,7 +348,6 @@ body {
   overflow: hidden;
 }
 
-
 .section-title{
   font-size: 60px;
   line-height: 1;
@@ -360,23 +359,11 @@ body {
 
 *, *::before, *::after{
   box-sizing: border-box;
-}/*  确保卡片固定宽度，不被别的样式挤压 */
-
-
-.project-card{
-  width: 300px;
-  flex: 0 0 300px;     /* 关键：别让 flex 把它拉伸/压缩 */
-  background: #D7E3A6;
-  border-radius: 20px;
-  padding: 12px 12px 24px;
-  text-align: center;
 }
 
-/* ✅ 关键：用 flex-wrap 做 3 + 2 自动居中 */
 .portfolio-grid{
   position: relative;
   z-index: 2;
-
   max-width: 1200px;
   width: 100%;           /* 控制整体宽度，让 3 张更像图里那样居中 */
   margin: 0 auto;              /* 居中整个网格 */
@@ -386,22 +373,20 @@ body {
   gap: 64px 84px;              /* 行间距 + 列间距（接近截图空隙） */
 }
 
-/* 卡片 */
 .project-card{
-  width: 300px;                /* 固定宽度：保证一行正好 3 个 */
+  width: 300px;
+  flex: 0 0 300px;
   background: #D7E3A6;
   border-radius: 28px;
   padding: 16px 16px 24px;
   text-align: center;
-}
 
-
-.project-card{
   transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
   transform: translateY(0) scale(1);
   will-change: transform;
-  cursor: pointer;             /* 让它看起来可点 */
+  cursor: pointer;
 }
+
 
 .project-card:hover{
   transform: translateY(-6px);
@@ -419,7 +404,6 @@ body {
 .project-card img{
   transition: transform .18s ease;
 }
-
 
 .project-image{
   background: rgba(255,255,255,.7);
@@ -486,8 +470,8 @@ body {
   bottom: 100px;         /* ✅ 数值越大越往上 */
   width: 180px;
   opacity: 0.4;
-  
 }
+
 
 
 
@@ -593,6 +577,10 @@ body {
   margin-top: 16px;
   margin-bottom: 20px;     /* ✅ 拉开与下一张图的距离 */
 }
+
+
+
+
 
 
 .transition-cta{
