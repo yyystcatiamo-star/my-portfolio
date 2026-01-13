@@ -138,10 +138,11 @@ body {
 }
 
 .hero-section h1 {
-  font-size: 96px;          /* 你想保持也OK */
+  font-size: 96px;          
   margin: 0;
   font-weight: 400;
-  line-height: 1.05;        /* 关键：让大标题更干净 */
+  line-height: 1.05; 
+  
 }
 
 .subtitle-box {
@@ -150,13 +151,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  margin-top: 18px;         /* 给副标题一口气 */
+  margin-top: 18px;  
+        
 }
 
 .line {
   width: 70px;              /* 50有点短，视觉不稳 */
   height: 1px;
-  background-color: rgba(0,0,0,0.45); /* 比#333更柔 */
+  background-color:#000000;
+  
 }
 
 .subtitle {
@@ -165,12 +168,14 @@ body {
   font-weight: 500;
   letter-spacing: 0.02em;
   opacity: 0.85;
+  
 }
 
 .welcome {
   margin-top: 60px;         /* 16太小，改到 50-80 之间试 */
   font-size: 88px;          /* 建议比h1略小一点，更有层级 */
   line-height: 1.1;
+  
 }
 
 
@@ -201,7 +206,7 @@ body {
   margin:0 0 22px;
   font-weight:400;
   letter-spacing:0;
-  color:#006400; /* ✅ 记得分号 */
+  color:#006400; 
 }
 
 .about-text p{ line-height:1.35; max-width:56ch; } 
@@ -230,7 +235,7 @@ body {
 
 .about-text li{
   font-size:22px;
-  color:#000;
+  color: #000;
 }
 
 /* 右侧：叠层舞台 */
