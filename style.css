@@ -895,13 +895,13 @@ body {
   color:#000;
   text-decoration:none;
 
-  padding: 24px 0 18px;
+  padding: 20px 0 18px;
   border-bottom: 3px solid #006400;
   width: 72%;
 }
 
 .drawer-sub{
-  padding: 18px 0 36px;
+  padding: 18px 0 16px;
   display:flex;
   flex-direction:column;
   gap: 10px;
@@ -918,19 +918,15 @@ body {
     overflow: hidden;
     height: auto;        
     min-height: 100svh;  
-    padding: 180px 6vw 80px; /* ✅ 150 太大，先降一点 */
+    padding: 180px 6vw 80px; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     text-align: left;
-
-   
     z-index: 1;
   }
 
-
-  /* 文字层在上 */
   .hero-section h1,
   .hero-section .subtitle-box,
   .hero-section .welcome{
@@ -987,10 +983,8 @@ body {
     top: 120px;
     left: -10px;
     width: 220px;
-    opacity: 0.85;
+    opacity: 0.45;
   }
-
-
   .deco.snake{
     top: 65%;
     left: 50%;
@@ -998,15 +992,14 @@ body {
     width: 120vw;
     max-width: none;
     height: auto;
-    opacity: 0.85;
+    opacity: 0.45;
   }
 
-    /* 左下两个圆星（你的图2那种） */
   .deco.stars{
     bottom: 55px;
     left: 28px;
     width: 120px;
-    opacity: 0.85;
+    opacity: 0.45;
   }
 }
 
