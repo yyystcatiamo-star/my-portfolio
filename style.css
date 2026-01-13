@@ -25,6 +25,8 @@ body {
   display: none;
 }
 
+.menu-btn{ display:none; border:0; background:transparent; padding:0; }
+
 .logo{
   display:flex;
   align-items:center;
@@ -762,7 +764,6 @@ body {
   height:26px;
   display:block;
 }
-
 
 
 
