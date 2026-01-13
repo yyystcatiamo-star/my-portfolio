@@ -981,7 +981,7 @@ body {
     opacity: 0.45;
   }
   .deco.snake{
-    top: 72%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 120vw;
@@ -991,7 +991,7 @@ body {
   }
 
   .deco.stars{
-    bottom: 45px;
+    bottom: 55px;
     left: 28px;
     width: 120px;
     opacity: 0.45;
@@ -1235,7 +1235,7 @@ body {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-
+  }
 
   .transition-cta{
     padding: 56px 6vw;          /* 上下别太厚，左右用 vw 更舒服 */
@@ -1253,9 +1253,7 @@ body {
     word-break: break-word;   
   }
  
- 
- 
- 
+
   .contact-section{
     padding: 70px 6vw 40px;  
   }
@@ -1322,7 +1320,6 @@ body {
     margin: 4px 0;
     font-size: 13px;
     line-height: 1;      /* 行距更紧：可试 1.25~1.4 */
-    
     letter-spacing: -0.3px;
     
   }
@@ -1340,76 +1337,6 @@ body {
     width: 22px;
     height: 22px;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
