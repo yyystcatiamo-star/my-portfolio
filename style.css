@@ -765,30 +765,9 @@ body {
 
 
 
-.menu-btn{ display:none; }
 
-/* 汉堡按钮外观 + 大点击区域 */
-.menu-btn{
-  width:48px;
-  height:48px;
-  border:0;
-  background:transparent;
-  padding:0;
-  cursor:pointer;
 
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  gap:7px;
-}
 
-.menu-btn span{
-  display:block;
-  width:30px;
-  height:2px;
-  background:#006400;
-  border-radius:999px;
-}
 
 
 
@@ -797,19 +776,12 @@ body {
 *, *::before, *::after{ box-sizing: border-box; }
 
 @media (max-width: 820px){
-  html, body{ width:100%; overflow-x:hidden; }
-
+html, body{ width:100%; overflow-x:hidden; }
   .nav-links{ display:none; }
-
-  .menu-btn{ order:1; }
-  .logo{ order:2; }
-
 
   .navbar{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 4000;
 
     width: 100%;
@@ -817,38 +789,52 @@ body {
     align-items:center;
     justify-content:space-between;
 
-    padding: 8px 10px;     /* 想更靠边就再小点，比如 6px 8px */
-    background: #B2CE80;   /* 你导航栏那条绿（如果你已有就可删） */
-    
+    padding: 8px 10px;
+    background: #B2CE80;
   }
 
-  
   .menu-btn{
-    display:flex;
-    margin: 0;
-    order: 1;
-    z-index: 4100;
+    width:48px;
+    height:48px;
+    border:0;
+    background:transparent;
+    padding:0;
+    cursor:pointer;
+
+    display:flex;                
+    flex-direction:column;
+    justify-content:center;
+    gap:7px;
+
+    order:1;
+    flex:0 0 auto;
+    z-index:4100;
   }
 
+   .menu-btn span{
+    display:block;
+    width:30px;
+    height:2px;
+    background:#006400;
+    border-radius:999px;
+   }
   .logo{
     display:flex;
     align-items:center;
-    gap: 8px;
-    margin: 0;
-    order: 2;
-    z-index: 4100;
-    flex: 1 1 auto;                 /* 允许占剩余空间 */
-    justify-content: flex-end;       /* 贴右 */
-    max-width: calc(100% - 60px);    /* 给汉堡留位置 */
+    gap:8px;
+
+    order:2;
+    flex:1 1 auto;
+    justify-content:flex-end;
+    max-width: calc(100% - 60px);
+
+    margin:0;
+    z-index:4100;
   }
 
-  .menu-btn{ flex: 0 0 auto; }
   .logo-text{ display:none; }
-  .logo-img{
-    display:block;
-    width:40px;
-    height:40px;
-  }
+  .logo-img{ display:block; width:40px; height:40px; }
+  
 
 
   .nav-drawer{
@@ -864,14 +850,14 @@ body {
   overflow-x: hidden;
 
   display: none;
-  z-index: 99999;   /* ✅ 必须盖住 contact/所有装饰 */
+  z-index: 99999;   
   }
   .nav-drawer.open{ display: block; }
 
-/* ✅ 遮罩（点它关菜单） */
+
   .drawer-backdrop{
   position: fixed;
-  inset: 56px 0 0 0;   /* 同上，跟 navbar 高度一致 */
+  inset: 56px 0 0 0;   
   background: rgba(0,0,0,.08);
   z-index: 99998;
 }
@@ -923,7 +909,7 @@ body {
     z-index: 2;
   }
 
-  /* 装饰层在后 */
+  
   .deco{
     position: absolute;
     z-index: 1;
@@ -1023,15 +1009,15 @@ body {
   
   .profile-stage{
     order: 2;
-    width: min(86vw, 360px);
-    height: min(86vw, 360px);
+    width: min(86vw, 300px);
+    height: min(86vw, 300px);
     margin: 6px auto 6px;
   }
 
   /* ✅ 相框跟着缩放 */
   .photo-card{
     right: 22px;
-    top: 18px;
+    top: 22px;
 
     width: calc(100% - 44px);
     height: calc(100% - 44px);
