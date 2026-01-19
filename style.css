@@ -645,7 +645,7 @@ body {
 .contact-card{
   max-width:1200px;
   margin:0 auto;
-  background:#D7E3A6;
+  background:#DCE8B0;
   border-radius:70px;
   padding:78px 96px 92px;  /* 关键：别用 300px 那种会把表单挤烂 */
   position:relative;
@@ -660,6 +660,7 @@ body {
   row-gap:44px;
   align-items:start;
   position:relative;
+ 
   z-index:2;              /* 表单在 stars 上面 */
 }
 
@@ -690,7 +691,8 @@ body {
   outline:none;
   padding:10px 14px;
   font-size:18px;
-  color:#222;
+ 
+  background-color: #FFFAF0;
 }
 
 .field textarea{
@@ -1269,6 +1271,7 @@ html, body{ width:100%; overflow-x:hidden; }
     height: 50px;
     font-size: 16px;
     padding: 10px 12px;
+    background-color: #FFFAF0;
   }
 
   .field textarea{
