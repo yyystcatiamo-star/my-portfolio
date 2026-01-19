@@ -8,7 +8,7 @@ body {
 
 
 .navbar {
-    background-color: #b2ce80;
+    background-color:#b2ce80;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,10 +129,10 @@ body {
 
 .deco.snake {
     position: absolute;   /* 确保它是绝对定位 */
-    top: 52%;            /* 距离顶部 50% */
-    left: 50%;           /* 距离左侧 50% */
-    transform: translate(-50%, -50%); /* 向左和向上移动自身的一半，实现居中 */
-    width: 1600px;        /* 你设定的宽度 */
+    top: 52%;          
+    left: 50%;         
+    transform: translate(-50%, -50%);
+    width: 1600px;       
     z-index: -1;         /* 确保它在文字（I'M SHITONG）的后面 */
     opacity: 0.4;
     max-width: none;
@@ -158,7 +158,7 @@ body {
 }
 
 .line {
-  width: 70px;              /* 50有点短，视觉不稳 */
+  width: 70px;             
   height: 1px;
   background-color:#000000;
   
@@ -166,7 +166,7 @@ body {
 
 .subtitle {
   margin: 0;
-  font-size: 22px;          /* 18偏小，配96会显得弱 */
+  font-size: 22px;         
   font-weight: 500;
   letter-spacing: 0.02em;
   opacity: 0.85;
@@ -174,8 +174,8 @@ body {
 }
 
 .welcome {
-  margin-top: 60px;         /* 16太小，改到 50-80 之间试 */
-  font-size: 88px;          /* 建议比h1略小一点，更有层级 */
+  margin-top: 60px;        
+  font-size: 88px;          
   line-height: 1.1;
   
 }
@@ -332,7 +332,7 @@ body {
   height:60px;
   padding:0 24px;
   
-  background:#B2CE80;
+  background:#b2ce80;
   color:#fff;
   border-radius:999px;
   font-size:22px;
@@ -390,7 +390,7 @@ body {
 .project-card{
   width: 300px;
   flex: 0 0 300px;
-  background: #D7E3A6;
+  background:#DCE8B0;
   border-radius: 28px;
   padding: 16px 16px 24px;
   text-align: center;
@@ -420,7 +420,7 @@ body {
 }
 
 .project-image{
-  background: rgba(255,255,255,.7);
+  background: #FFFAF0; 
   border-radius: 22px;
   height: 190px;
   padding: 8px;
@@ -520,18 +520,18 @@ body {
 .slide{
   flex: 0 0 100%;
   margin: 0;
-  padding: 0;            /* ✅ 关键：去掉内边距 */
-  background: transparent; /* ✅ 去掉灰底 */
-  display: block;        /* ✅ 不用 flex 居中了 */
+  padding: 0;            /*  关键：去掉内边距 */
+  background: transparent; /*  去掉灰底 */
+  display: block;       
 }
 
 /* 图片铺满 viewport（会裁切，但很“占满”） */
 .slide img{
   width: 100%;
-  height: 85vh;          /* 你想多高就改：70vh / 80vh / 100vh */
+  height: 85vh;         
   display: block;
-  object-fit: cover;     /* ✅ 关键：铺满并裁切 */
-  border-radius: 0;      /* ✅ 不要边框感 */
+  object-fit: cover;     /*  关键：铺满并裁切 */
+  border-radius: 0;      /*  不要边框感 */
 }
 
 /* 左右箭头（可保留） */
@@ -647,7 +647,7 @@ body {
   margin:0 auto;
   background:#DCE8B0;
   border-radius:70px;
-  padding:78px 96px 92px;  /* 关键：别用 300px 那种会把表单挤烂 */
+  padding:78px 96px 92px;  
   position:relative;
   overflow:hidden;
 }
@@ -660,7 +660,6 @@ body {
   row-gap:44px;
   align-items:start;
   position:relative;
- 
   z-index:2;              /* 表单在 stars 上面 */
 }
 
@@ -671,7 +670,7 @@ body {
   grid-column:1 / 2;
 }
 
-/* label */
+/* label每个字段的样式 */
 .field label{
   display:block;
   font-size:22px;
@@ -714,7 +713,7 @@ body {
   cursor:pointer;
 }
 
-/* stars：卡片内右下角，略微“出界”更像你图里那种 */
+
 .stars{
   position:absolute;
   right:8%;
