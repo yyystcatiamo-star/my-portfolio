@@ -1,5 +1,5 @@
 body {
-    background-color: #e3eac7;
+    background-color:#FFFAF0;
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-item.active {
-  background-color: #e3eac7;
+  background-color:#FFFAF0; 
 }
 
 .nav-item::after {
@@ -213,7 +213,7 @@ body {
 
 .about-text p{ line-height:1.35; max-width:56ch; } 
 
-/* 左文字 */
+
 .about-text{
   flex:1;
   max-width:640px;
@@ -292,7 +292,7 @@ body {
   display:flex;
   justify-content:center;
   align-items:center;
-  background:#E3EAC7;
+  background:#FFFAF0;
   padding:36px 70px;
 }
 
@@ -308,7 +308,7 @@ body {
   gap:18px;
   font-size:28px;
   font-weight:400;
-  color:#006400;             /* ✅ 你原来写了个空的 color: */
+  color:#006400;            
 }
 
 .lang-icon{
@@ -357,7 +357,7 @@ body {
 .portfolio-section{
   min-height: 100vh;
   position: relative;
-  background: #E3EAC7;
+  background:#FFFAF0;
   padding: 110px 10% 90px;
   overflow: hidden;
 }
@@ -438,7 +438,7 @@ body {
   display: block;
 }
 
-/* 卡片标题：图里比较细、字距更松一点 */
+
 .project-card h3{
   margin: 10px 0 18px;
   font-size: 20px;
@@ -516,7 +516,7 @@ body {
   will-change: transform;
 }
 
-/* 每一页：去掉 padding & 背景 */
+
 .slide{
   flex: 0 0 100%;
   margin: 0;
@@ -596,8 +596,8 @@ body {
 
 
 .transition-cta{
-  background:#E3EAC7;          /* 跟你页面浅绿一致 */
-  padding: 90px 10%;           /* 过渡区域上下留白 */
+  background:#FFFAF0;      
+  padding: 90px 10%;         
 }
 
 .transition-inner{
@@ -622,7 +622,7 @@ body {
 
 .contact-section{
   min-height:100vh;
-  background:#E3EAC7;
+  background:#FFFAF0;
   padding:90px 8% 50px;
   position:relative;
   overflow:hidden;
@@ -845,7 +845,7 @@ html, body{ width:100%; overflow-x:hidden; }
   top: 56px;       
   bottom: 0;
 
-  background: #E3EAC7;
+  background: #FFFAF0;
   padding: 56px 40px 60px;
   overflow: auto;
   overflow-x: hidden;
@@ -1015,7 +1015,7 @@ html, body{ width:100%; overflow-x:hidden; }
     margin: 6px auto 6px;
   }
 
-  /* ✅ 相框跟着缩放 */
+  
   .photo-card{
     right: 22px;
     top: 22px;
