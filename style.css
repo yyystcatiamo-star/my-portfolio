@@ -1,6 +1,6 @@
 body {
     background-color:#FFFAF0;
-    font-family: "Nunito";
+    font-family: "Nunito","Avenir Next";
     margin: 0;
     padding: 0;
     color: #333;
@@ -473,7 +473,7 @@ body {
 
 .deco2-lefttop1{
   position: absolute;
-  right: 0px;          /* ✅ 负值让它更“贴边/出血” */
+  right: 0px;          /* 负值让它更“贴边/出血” */
   bottom: 120px;
   width: 300px;
   opacity: 0.4;
@@ -481,7 +481,7 @@ body {
 .deco2-stars{
   position: absolute;
   left: 60px;
-  bottom: 100px;         /* ✅ 数值越大越往上 */
+  bottom: 100px;         /*  数值越大越往上 */
   width: 180px;
   opacity: 0.4;
 }
@@ -505,7 +505,7 @@ body {
 
 .viewport{
   overflow: hidden;
-  border-radius: 0;      /* ✅ 不要圆角就 0 */
+  border-radius: 0;      /*  不要圆角就 0 */
   background: transparent;
 }
 
@@ -557,7 +557,7 @@ body {
 
 /* 小圆点 */
 .dots{
-  grid-column: 2;          /* ✅ 只占中间那列 */
+  grid-column: 2;          /*  只占中间那列 */
   justify-self: center;
 
   display: flex;
