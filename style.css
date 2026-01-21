@@ -128,12 +128,12 @@ body {
 }
 
 .deco.snake {
-    position: absolute;   /* 确保它是绝对定位 */
+    position: absolute;   
     top: 52%;          
     left: 50%;         
     transform: translate(-50%, -50%);
     width: 1600px;       
-    z-index: -1;         /* 确保它在文字（I'M SHITONG）的后面 */
+    z-index: -1;         
     opacity: 0.4;
     max-width: none;
     height: auto;
@@ -288,7 +288,7 @@ body {
 
 
 .language-footer{
-  margin-top:auto;           /* ✅ 关键：自动顶到页面底部 */
+  margin-top:auto;           
   display:flex;
   justify-content:center;
   align-items:center;
@@ -345,8 +345,8 @@ body {
 }
 
 .pill:active{
-  transform: scale(0.97);     /* 点击缩一下 */
-  filter: brightness(0.95);   /* 顺便暗一点点 */
+  transform: scale(0.97);     
+  filter: brightness(0.95);  
 }
 
 
@@ -379,12 +379,12 @@ body {
   position: relative;
   z-index: 2;
   max-width: 1200px;
-  width: 100%;           /* 控制整体宽度，让 3 张更像图里那样居中 */
-  margin: 0 auto;              /* 居中整个网格 */
+  width: 100%;           
+  margin: 0 auto;              
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;     /* 最后一行（2张）会自动居中 */
-  gap: 64px 84px;              /* 行间距 + 列间距（接近截图空隙） */
+  justify-content: center;     
+  gap: 64px 84px;              
 }
 
 .project-card{
@@ -473,7 +473,7 @@ body {
 
 .deco2-lefttop1{
   position: absolute;
-  right: 0px;          /* 负值让它更“贴边/出血” */
+  right: 0px;          
   bottom: 120px;
   width: 300px;
   opacity: 0.4;
@@ -481,7 +481,7 @@ body {
 .deco2-stars{
   position: absolute;
   left: 60px;
-  bottom: 100px;         /*  数值越大越往上 */
+  bottom: 100px;        
   width: 180px;
   opacity: 0.4;
 }
@@ -494,7 +494,7 @@ body {
   padding: 80px 10% ;
 }
 
-/* 外框：左右按钮 + 中间 viewport */
+/* 外框 */
 .carousel{
   position: relative;
   display: grid;
@@ -505,7 +505,7 @@ body {
 
 .viewport{
   overflow: hidden;
-  border-radius: 0;      /*  不要圆角就 0 */
+  border-radius: 0;      
   background: transparent;
 }
 
@@ -520,21 +520,21 @@ body {
 .slide{
   flex: 0 0 100%;
   margin: 0;
-  padding: 0;            /*  关键：去掉内边距 */
-  background: transparent; /*  去掉灰底 */
-  display: block;       
+  padding: 0;          
+  background: transparent; 
+      
 }
 
-/* 图片铺满 viewport（会裁切，但很“占满”） */
+
 .slide img{
   width: 100%;
   height: 85vh;         
   display: block;
-  object-fit: cover;     /*  关键：铺满并裁切 */
-  border-radius: 0;      /*  不要边框感 */
+  object-fit: cover;     
+  border-radius: 0;     
 }
 
-/* 左右箭头（可保留） */
+/* 左右箭头 */
 .nav{
   width: 54px;
   height: 54px;
@@ -601,13 +601,13 @@ body {
 }
 
 .transition-inner{
-  max-width: 1100px;           /* 控制行宽，别铺满更高级 */
+  max-width: 1100px;         
   margin: 0 auto;
 }
 
 .transition-text{
   margin: 0;
-  font-size: 72px;             /* 你截图那种大字 */
+  font-size: 72px;            
   line-height: 1.08;
   font-weight: 500;
   color:#006400;
@@ -635,7 +635,7 @@ body {
 
 .contact-title{
   margin:0;
-  font-size:60px;          /* 更接近你图里的大标题 */
+  font-size:60px;         
   font-weight:500;
   color:#006400;
   letter-spacing:.2px;
@@ -660,10 +660,10 @@ body {
   row-gap:44px;
   align-items:start;
   position:relative;
-  z-index:2;              /* 表单在 stars 上面 */
+  z-index:2;              
 }
 
-/* 让 Email / Message / Button 在左列（跟截图一致） */
+/* 布局 */
 .field-email,
 .field-message,
 .contact-btn{
@@ -684,7 +684,7 @@ body {
 .field textarea{
   width:100%;
   height:56px;
-  border: 1pt solid rgba(107, 140, 73, 0.619); /* 柔和灰绿 */
+  border: 1pt solid rgba(107, 140, 73, 0.619); 
   background:transparent;
   border-radius:0;
   outline:none;
@@ -717,10 +717,10 @@ body {
 .stars{
   position:absolute;
   right:8%;
-  bottom:200px;       /* ✅ 这个数调到“压在卡片右下角”的位置 */
+  bottom:200px;       
   width:220px;
   height:auto;
-  z-index:5;          /* ✅ 比卡片更高 */
+  z-index:5;         
   pointer-events:none;
   opacity: 0.6;
 }
@@ -866,7 +866,7 @@ html, body{ width:100%; overflow-x:hidden;
 }
   .drawer-backdrop[hidden]{ display:none; }
 
-/* 菜单大字 + 线 */
+/* 菜单大字 线 */
   .drawer-item{
   display:block;
   font-size: 36px;
@@ -1092,19 +1092,19 @@ html, body{ width:100%; overflow-x:hidden;
 
   .lang-options{
     display:flex;
-    flex-wrap: nowrap;        /* 关键：不换行 */
-    gap: 10px;                /* 按钮之间距离 */
+    flex-wrap: nowrap;        
+    gap: 10px;                
     width: 100%;
     justify-content: space-between;
   }
 
   .pill{
-    flex: 1 1 0;              /* 关键：三个平分一行 */
-    min-width: 0;             /* 关键：允许变窄 */
+    flex: 1 1 0;             
+    min-width: 0;            
     height: 40px;
     padding: 0 10px;
     font-size: 14px;
-    white-space: nowrap;      /* 字不换行 */
+    white-space: nowrap;     
   }
 
 
@@ -1316,7 +1316,6 @@ html, body{ width:100%; overflow-x:hidden;
     width: 22px;
     height: 22px;
   }
-
 
 
 
