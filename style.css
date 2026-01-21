@@ -20,9 +20,10 @@ body {
     right: 0;
     z-index: 9999;
 } 
-
-.drawer-backdrop[hidden]{ display:none; }
-
+.nav-drawer,
+.drawer-backdrop{
+  display: none;
+}
 
 .menu-btn{ display:none; border:0; background:transparent; padding:0; }
 
@@ -298,7 +299,7 @@ body {
 .language-group{
   display:flex;
   align-items:center;
-  gap:38px;
+  gap: 86px;
 }
 
 .lang-label{
@@ -556,7 +557,7 @@ body {
 
 /* 小圆点 */
 .dots{
-  grid-column: 2;          /*  只占中间那列 */
+  grid-column: 2;          
   justify-self: center;
 
   display: flex;
@@ -854,8 +855,9 @@ html, body{ width:100%; overflow-x:hidden;
   display: none;
   z-index: 99999;   
   }
-
   .nav-drawer.open{ display: block; }
+
+
   .drawer-backdrop{
   position: fixed;
   inset: 56px 0 0 0;   
@@ -863,7 +865,6 @@ html, body{ width:100%; overflow-x:hidden;
   z-index: 99998;
 }
   .drawer-backdrop[hidden]{ display:none; }
-  .drawer-backdrop{ display:block; }
 
 /* 菜单大字 线 */
   .drawer-item{
@@ -1319,8 +1320,6 @@ html, body{ width:100%; overflow-x:hidden;
 
 
 }
-
-
 
 
 

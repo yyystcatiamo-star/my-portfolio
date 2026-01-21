@@ -148,7 +148,7 @@
       </div>
     </div>
 
-  </div> <!--  这里结束 about-container -->
+  </div> 
 
 
   <div class="language-footer">
@@ -393,136 +393,137 @@
 </section>
 
 
-
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+  
+  document.addEventListener("DOMContentLoaded", () => {
+   
+    
+    const sections = document.querySelectorAll("#home, #about, #portfolio, #contact");
+    const navItems = document.querySelectorAll(".nav-item");
 
-  // 1) nav active (IntersectionObserver)
-  const sections = document.querySelectorAll("#home, #about, #portfolio, #contact");
-  const navItems = document.querySelectorAll(".nav-item");
-
-  const setActive = (id) => {
-    navItems.forEach(a => {
-      a.classList.toggle("active", a.getAttribute("href") === "#" + id);
-    });
-  };
-
-  if (sections.length && navItems.length) {
-    const io = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActive(visible.target.id);
-    }, { threshold: 0.25, rootMargin: "-80px 0px -40% 0px" });
-
-    sections.forEach(s => io.observe(s));
-  }
-
-  // 2) carousels
-  document.querySelectorAll(".carousel-block").forEach((block) => {
-    const track = block.querySelector(".track");
-    const slides = Array.from(block.querySelectorAll(".slide"));
-    const prevBtn = block.querySelector(".prev");
-    const nextBtn = block.querySelector(".next");
-    const dotsWrap = block.querySelector(".dots");
-
-    if (!track || slides.length === 0 || !prevBtn || !nextBtn || !dotsWrap) return;
-
-    let index = 0;
-
-    // dots
-    dotsWrap.innerHTML = "";
-    slides.forEach((_, i) => {
-      const b = document.createElement("button");
-      b.className = "dot";
-      b.type = "button";
-      b.setAttribute("aria-label", `Go to ${i + 1}`);
-      b.addEventListener("click", () => {
-        index = i;
-        update();
+    const setActive = (id) => {
+      navItems.forEach((a) => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + id);
       });
-      dotsWrap.appendChild(b);
-    });
+    };
 
-    const dots = Array.from(dotsWrap.querySelectorAll(".dot"));
+    if (sections.length && navItems.length) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    function update() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((d, i) => d.classList.toggle("active", i === index));
+          if (visible) setActive(visible.target.id);
+        },
+        { threshold: 0.25, rootMargin: "-80px 0px -40% 0px" }
+      );
+
+      sections.forEach((s) => io.observe(s));
     }
-
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
-      update();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      update();
-    });
-
-    update();
-  });
-
-  // 3) about language switch
-  const pills = document.querySelectorAll("#about .pill[data-lang]");
-  const blocks = document.querySelectorAll("#about .lang-block");
-
-  function setLang(lang) {
-    blocks.forEach(b => b.hidden = (b.dataset.lang !== lang));
-    pills.forEach(p => p.setAttribute("aria-pressed", p.dataset.lang === lang));
-  }
-
-  if (pills.length && blocks.length) {
-    pills.forEach(p => p.addEventListener("click", () => setLang(p.dataset.lang)));
-    setLang("en");
-  }
-
-  // 4) mobile menu drawer
-  const btn = document.querySelector(".menu-btn");
-  const drawer = document.querySelector(".nav-drawer");
-  const backdrop = document.querySelector(".drawer-backdrop");
-
-  if (btn && drawer && backdrop) {
-    function openMenu(){
-      drawer.classList.add("open");
-      backdrop.hidden = false;
-      btn.setAttribute("aria-expanded", "true");
-      drawer.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeMenu(){
-      drawer.classList.remove("open");
-      backdrop.hidden = true;
-      btn.setAttribute("aria-expanded", "false");
-      drawer.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-
-    btn.addEventListener("click", () => {
-      drawer.classList.contains("open") ? closeMenu() : openMenu();
-    });
-
-    backdrop.addEventListener("click", closeMenu);
-
-    drawer.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", closeMenu);
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
-  }
-
-});
-</script>
-
-
 
     
+    document.querySelectorAll(".carousel-block").forEach((block) => {
+      const track = block.querySelector(".track");
+      const slides = Array.from(block.querySelectorAll(".slide"));
+      const prevBtn = block.querySelector(".prev");
+      const nextBtn = block.querySelector(".next");
+      const dotsWrap = block.querySelector(".dots");
+
+      if (!track || slides.length === 0 || !prevBtn || !nextBtn || !dotsWrap) return;
+
+      let index = 0;
+
+      
+      
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.className = "dot";
+        b.type = "button";
+        b.setAttribute("aria-label", `Go to ${i + 1}`);
+        b.addEventListener("click", () => {
+          index = i;
+          update();
+        });
+        dotsWrap.appendChild(b);
+      });
+
+      const dots = Array.from(dotsWrap.querySelectorAll(".dot"));
+
+      function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      }
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        update();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        update();
+      });
+
+      update();
+    });
+
+
+
+    const pills = document.querySelectorAll("#about .pill[data-lang]");
+    const blocks = document.querySelectorAll("#about .lang-block");
+
+    function setLang(lang) {
+      blocks.forEach((b) => (b.hidden = b.dataset.lang !== lang));
+      pills.forEach((p) => p.setAttribute("aria-pressed", p.dataset.lang === lang));
+    }
+
+    if (pills.length && blocks.length) {
+      pills.forEach((p) => p.addEventListener("click", () => setLang(p.dataset.lang)));
+      setLang("en");
+    }
+
+    
+    
+    const btn = document.querySelector(".menu-btn");
+    const drawer = document.querySelector(".nav-drawer");
+    const backdrop = document.querySelector(".drawer-backdrop");
+
+    if (btn && drawer && backdrop) {
+      function openMenu() {
+        drawer.classList.add("open");
+        backdrop.hidden = false;
+        btn.setAttribute("aria-expanded", "true");
+        drawer.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        drawer.classList.remove("open");
+        backdrop.hidden = true;
+        btn.setAttribute("aria-expanded", "false");
+        drawer.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      btn.addEventListener("click", () => {
+        drawer.classList.contains("open") ? closeMenu() : openMenu();
+      });
+
+      backdrop.addEventListener("click", closeMenu);
+
+      drawer.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    }
+  });
+</script>
+
 </body>
-
-
 
 </html>
