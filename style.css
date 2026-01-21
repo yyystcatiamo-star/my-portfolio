@@ -20,10 +20,9 @@ body {
     right: 0;
     z-index: 9999;
 } 
-.nav-drawer,
-.drawer-backdrop{
-  display: none;
-}
+
+.drawer-backdrop[hidden]{ display:none; }
+
 
 .menu-btn{ display:none; border:0; background:transparent; padding:0; }
 
@@ -320,7 +319,7 @@ body {
 .lang-options{
   display:flex;
   gap:100px;                
-  flex-wrap:wrap;            /* ✅ 小屏自动换行不爆 */
+  flex-wrap:wrap;            
   justify-content:center;
 }
 
@@ -855,9 +854,8 @@ html, body{ width:100%; overflow-x:hidden;
   display: none;
   z-index: 99999;   
   }
+
   .nav-drawer.open{ display: block; }
-
-
   .drawer-backdrop{
   position: fixed;
   inset: 56px 0 0 0;   
@@ -865,6 +863,7 @@ html, body{ width:100%; overflow-x:hidden;
   z-index: 99998;
 }
   .drawer-backdrop[hidden]{ display:none; }
+  .drawer-backdrop{ display:block; }
 
 /* 菜单大字 线 */
   .drawer-item{
