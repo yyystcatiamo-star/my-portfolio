@@ -181,12 +181,25 @@ body {
 }
 
 
+.section-title, 
+.contact-top {
+    max-width: 1200px; /* 与内容容器宽度一致 */
+    margin: 0 auto 28px auto; /* 关键：auto 左右外边距实现居中对齐 */
+    width: 100%;
+}
+
+/* 如果你想让标题文字靠左对齐，确保上面有了 margin: 0 auto 之后再加这个 */
+.section-title, .contact-title {
+    text-align: left; 
+}
+
+
 
 
 .full-page{
   min-height:100vh;
   background:var(--bg);
-  padding:140px 100px 80px; 
+  padding:140px 10% 80px; 
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
@@ -202,13 +215,17 @@ body {
   flex:1;
 }
 
-.about-text h3{
-  font-size:60px;
-  line-height:1;
-  margin:0 0 22px;
-  font-weight:400;
-  letter-spacing:0;
-  color:#006400; 
+.section-title{
+  font-size: 60px;
+  line-height: 1;
+  margin: 0 0 28px;
+  font-weight: 400;
+  color:#006400;
+}
+
+.section-inner{
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-text p{ line-height:1.35; max-width:56ch; } 
@@ -370,6 +387,11 @@ body {
   color:#006400;   
 } 
 
+.portfolio-section .section-title{
+  max-width:1200px;
+  margin: 0 auto 28px;
+  width:100%;
+}
 
 *, *::before, *::after{
   box-sizing: border-box;
@@ -384,7 +406,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;     
-  gap: 64px 84px;              
+  gap: 74px 140px;              
 }
 
 .project-card{
@@ -513,6 +535,7 @@ body {
 .track{
   display: flex;
   transition: transform .45s ease;
+  
   will-change: transform;
 }
 
@@ -565,7 +588,7 @@ body {
   gap: 10px;
 
   margin-top: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 52px;
 }
 
 .dot{
@@ -623,23 +646,17 @@ body {
 .contact-section{
   min-height:100vh;
   background:#FFFAF0;
-  padding:90px 8% 50px;
+  padding:90px 10% 50px;
   position:relative;
   overflow:hidden;
 }
 
-/* 标题 */
 .contact-top{
-  margin:0 0 28px;
+  max-width:1200px;
+  margin:0 auto 18px;
+  width:100%;
 }
 
-.contact-title{
-  margin:0;
-  font-size:60px;         
-  font-weight:500;
-  color:#006400;
-  letter-spacing:.2px;
-}
 
 /* 卡片 */
 .contact-card{
@@ -1320,51 +1337,6 @@ html, body{ width:100%; overflow-x:hidden;
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
